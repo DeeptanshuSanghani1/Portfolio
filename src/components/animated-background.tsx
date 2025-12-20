@@ -203,11 +203,12 @@ const AnimatedBackground = () => {
 
   // initialize gsap animations
   useEffect(() => {
-    handleSplineInteractions();
+    const cleanup = handleSplineInteractions();
     handleGsapAnimations();
     setBongoAnimation(getBongoAnimation());
     setKeycapAnimtations(getKeycapsAnimation());
-  }, [splineApp]);
+    return cleanup;
+  }, [splineApp, activeSection]);
 
   useEffect(() => {
     let rotateKeyboard: gsap.core.Tween;
@@ -343,6 +344,37 @@ const AnimatedBackground = () => {
       );
     });
   };
+  // Hardware keyboard mapping: row-based sequential
+  const getSkillFromKeyPress = (key: string): Skill | null => {
+    const row1 = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+    const row2 = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"];
+    const row3 = ["a", "s", "d", "f", "g", "h", "j", "k", "l"];
+    const row4 = ["z", "x", "c", "v", "b", "n", "m"];
+
+    const skillsArray = Object.values(SKILLS);
+    const lowerKey = key.toLowerCase();
+
+    let skillIndex = -1;
+
+    if (row1.includes(lowerKey)) {
+      const keyIndex = row1.indexOf(lowerKey);
+      skillIndex = keyIndex % 6; // Skills 1-6 (repeat)
+    } else if (row2.includes(lowerKey)) {
+      const keyIndex = row2.indexOf(lowerKey);
+      skillIndex = 6 + (keyIndex % 6); // Skills 7-12 (repeat)
+    } else if (row3.includes(lowerKey)) {
+      const keyIndex = row3.indexOf(lowerKey);
+      skillIndex = 12 + (keyIndex % 6); // Skills 13-18 (repeat)
+    } else if (row4.includes(lowerKey)) {
+      const keyIndex = row4.indexOf(lowerKey);
+      skillIndex = 18 + (keyIndex % 6); // Skills 19-24 (repeat inside row)
+    }
+
+    return skillIndex >= 0 && skillIndex < skillsArray.length
+      ? skillsArray[skillIndex]
+      : null;
+  };
+
   const handleSplineInteractions = () => {
     if (!splineApp) return;
     splineApp.addEventListener("keyUp", (e) => {
@@ -358,6 +390,33 @@ const AnimatedBackground = () => {
       splineApp.setVariable("desc", skill.shortDescription);
     });
     splineApp.addEventListener("mouseHover", handleMouseHover);
+
+    // Hardware keyboard event listener
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (!splineApp || activeSection !== "skills") return;
+      const skill = getSkillFromKeyPress(e.key);
+      if (skill) {
+        setSelectedSkill(skill);
+        splineApp.setVariable("heading", skill.label);
+        splineApp.setVariable("desc", skill.shortDescription);
+      }
+    };
+
+    const handleKeyRelease = (e: KeyboardEvent) => {
+      if (!splineApp || activeSection !== "skills") return;
+      splineApp.setVariable("heading", "");
+      splineApp.setVariable("desc", "");
+      setSelectedSkill(null);
+    };
+
+    window.addEventListener("keydown", handleKeyPress);
+    window.addEventListener("keyup", handleKeyRelease);
+
+    // Cleanup function
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+      window.removeEventListener("keyup", handleKeyRelease);
+    };
   };
   const handleGsapAnimations = () => {
     if (!splineApp) return;
@@ -507,7 +566,7 @@ const AnimatedBackground = () => {
           frame2.visible = false;
         }
         i++;
-      }, 100);
+      }, 200);
     };
     const stop = () => {
       clearInterval(interval);
@@ -520,43 +579,43 @@ const AnimatedBackground = () => {
   const getKeycapsAnimation = () => {
     if (!splineApp) return { start: () => {}, stop: () => {} };
 
-    let tweens: gsap.core.Tween[] = [];
     const start = () => {
-      removePrevTweens();
+      // First stop any existing animations
+      Object.values(SKILLS).forEach((skill) => {
+        const keycap = splineApp.findObjectByName(skill.name);
+        if (!keycap) return;
+        gsap.killTweensOf(keycap.position);
+      });
+
+      // Start new floating animations
       Object.values(SKILLS)
         .sort(() => Math.random() - 0.5)
         .forEach((skill, idx) => {
           const keycap = splineApp.findObjectByName(skill.name);
           if (!keycap) return;
-          const t = gsap.to(keycap?.position, {
-            y: Math.random() * 200 + 200,
-            duration: Math.random() * 2 + 2,
-            delay: idx * 0.6,
+          gsap.to(keycap?.position, {
+            y: Math.random() * 150 + 150,
+            duration: Math.random() * 1 + 2.5,
+            delay: idx * 0.3,
             repeat: -1,
             yoyo: true,
-            yoyoEase: "none",
-            ease: "elastic.out(1,0.3)",
+            yoyoEase: "sine.inOut",
+            ease: "sine.inOut",
           });
-          tweens.push(t);
         });
     };
     const stop = () => {
-      removePrevTweens();
+      // Kill all keycap animations and return to original position
       Object.values(SKILLS).forEach((skill) => {
         const keycap = splineApp.findObjectByName(skill.name);
         if (!keycap) return;
-        const t = gsap.to(keycap?.position, {
-          y: 0,
-          duration: 4,
-          repeat: 1,
-          ease: "elastic.out(1,0.8)",
+        gsap.killTweensOf(keycap.position);
+        gsap.to(keycap?.position, {
+          y: 50,
+          duration: 1,
+          ease: "power2.out",
         });
-        tweens.push(t);
       });
-      setTimeout(removePrevTweens, 1000);
-    };
-    const removePrevTweens = () => {
-      tweens.forEach((t) => t.kill());
     };
     return { start, stop };
   };

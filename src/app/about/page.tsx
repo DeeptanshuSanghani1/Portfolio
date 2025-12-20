@@ -43,8 +43,8 @@ import { TbTerminal2 } from "react-icons/tb";
 const CONTACT_LINKS = [
   {
     name: "Email",
-    content: "naresh.khatri2345@gmail",
-    href: "mailto:naresh.khatri2345@gmail.com",
+    content: "sam7778886667@gmail",
+    href: "mailto:sam7778886667@gmail.com",
     icon: <FaEnvelope height={"50px"} />,
   },
   {
@@ -55,14 +55,14 @@ const CONTACT_LINKS = [
   },
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/in/naresh-khatri/",
-    content: "/naresh-khatri",
+    href: "https://www.linkedin.com/in/sameerwork0207/",
+    content: "/sameer",
     icon: <FaLinkedin height={"50px"} />,
   },
   {
     name: "GitHub",
-    href: "https://github.com/Naresh-Khatri",
-    content: "/naresh-khatri",
+    href: "https://github.com/sameerwork0207",
+    content: "/sameer",
     icon: <FaGithub height={"50px"} />,
   },
 ];
@@ -251,7 +251,7 @@ function Page() {
                 />
               </div>
               <div className="flex flex-col gap-3 lg:items-center ml-10 md:ml-20 lg:ml-0">
-                <p className="text-center text-xl">Naresh Khatri</p>
+                <p className="text-center text-xl">Sameer Shaikh</p>
                 <div className="text-xs bg-zinc-700 w-fit px-3 py-1 rounded-full">
                   Web Developer
                 </div>

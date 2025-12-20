@@ -3,8 +3,6 @@ import { config } from "@/data/config";
 import { Resend } from "resend";
 import { z } from "zod";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const Email = z.object({
   fullName: z.string().min(2, "Full name is invalid!"),
   email: z.string().email({ message: "Email is invalid!" }),
@@ -22,6 +20,8 @@ export async function POST(req: Request) {
     if (!zodSuccess)
       return Response.json({ error: zodError?.message }, { status: 400 });
 
+    // Initialize Resend only when the route is called
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const { data: resendData, error: resendError } = await resend.emails.send({
       from: "Sameer Shaikh <contact@sameershaikh.space>",
       to: [config.email],
