@@ -3,7 +3,7 @@ const config = {
   title: "Deeptanshu Sanghani | Portfolio",
   author: "Deeptanshu Sanghani",
   email: "deeptanshusanghani@gmail.com", // Your email
-  site: "https://portfolio-one-lyart-66.vercel.app/", // We'll update this later
+  site: "https://www.deeptanshusanghani.com/", // We'll update this later
 
   // --- 2. Your Descriptions (for Google) ---
   description: {
@@ -30,7 +30,7 @@ const config = {
 
   // --- You can leave this part alone ---
   get ogImg() {
-    return this.site + "/assets/seo/og-image.png";
+    return this.site + "/assets/seo/og-image.png?v=2";
   },
 };
 export { config };
