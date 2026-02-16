@@ -30,7 +30,7 @@ const config = {
 
   // --- You can leave this part alone ---
   get ogImg() {
-    return this.site + "/assets/seo/og-image.png?v=2";
+    return this.site + "/assets/seo/og-preview.png";
   },
 };
 export { config };
