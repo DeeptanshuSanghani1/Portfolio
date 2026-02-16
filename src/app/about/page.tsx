@@ -43,26 +43,26 @@ import { TbTerminal2 } from "react-icons/tb";
 const CONTACT_LINKS = [
   {
     name: "Email",
-    content: "sam7778886667@gmail",
-    href: "mailto:sam7778886667@gmail.com",
+    content: "deeptanshusanghani@gmail.com",
+    href: "mailto:deeptanshusanghani@gmail.com",
     icon: <FaEnvelope height={"50px"} />,
   },
   {
     name: "Phone",
-    content: "1234567890",
-    href: "tel:1234567890",
+    content: "+1 (437) 997-7196",
+    href: "tel:+14379977196",
     icon: <FaPhone height={"50px"} />,
   },
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/in/sameerwork0207/",
-    content: "/sameer",
+    href: "https://www.linkedin.com/in/deeptanshu-sanghani/",
+    content: "/deeptanshu-sanghani",
     icon: <FaLinkedin height={"50px"} />,
   },
   {
     name: "GitHub",
-    href: "https://github.com/sameerwork0207",
-    content: "/sameer",
+    href: "https://github.com/deeptanshu-sanghani",
+    content: "/deeptanshu-sanghani",
     icon: <FaGithub height={"50px"} />,
   },
 ];
@@ -247,11 +247,11 @@ function Page() {
                 <img
                   className="rounded-full p-4 lg:p-10 w-[100px] md:w-[150px] lg:w-[200px] aspect-square  bg-zinc-800"
                   alt="me"
-                  src="/assets/me.jpg"
+                  src="/assets/deeptanshu.jpg"
                 />
               </div>
               <div className="flex flex-col gap-3 lg:items-center ml-10 md:ml-20 lg:ml-0">
-                <p className="text-center text-xl">Sameer Shaikh</p>
+                <p className="text-center text-xl">Deeptanshu Sanghani</p>
                 <div className="text-xs bg-zinc-700 w-fit px-3 py-1 rounded-full">
                   Web Developer
                 </div>
@@ -287,7 +287,7 @@ function Page() {
           >
             <h1 className="text-3xl mb-10 lg:md-20">About me</h1>
             <p className="mb-10 text-roboto">
-              Hey there! I&apos;m Sameer Shaikh, I am passionate about technologies, learning and art
+              Hey there! I&apos;m Deeptanshu Sanghani, I am passionate about technologies, learning and art
             </p>
             <p className="mb-10">
               When I&apos;m not working, you can find me analysing my surroundings or music

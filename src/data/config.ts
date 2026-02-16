@@ -1,37 +1,31 @@
 const config = {
   // --- 1. Your Basic Info ---
-  title: "Sameer Shaikh | Data Science | Web Dev ",
-  author: "Sameer Shaikh",
-  email: "sameerwork0207@gmail.com", // Your email
+  title: "Deeptanshu Sanghani | Portfolio",
+  author: "Deeptanshu Sanghani",
+  email: "deeptanshusanghani@gmail.com", // Your email
   site: "https://portfolio-one-lyart-66.vercel.app/", // We'll update this later
 
   // --- 2. Your Descriptions (for Google) ---
   description: {
-    long: "Explore the portfolio of Sameer Shaikh, a student and developer passionate about Data Science, AI and Web Dev.",
+    long: "Explore the portfolio of Deeptanshu Sanghani, a Full-Stack Developer and Backend Engineer specializing in cloud technologies, data engineering, and enterprise applications.",
     short:
-      "The portfolio of Sameer Shaikh, Data Science and Web Dev enthusiast",
+      "The portfolio of Deeptanshu Sanghani, Full-Stack Developer and Backend Engineer",
   },
 
   // --- 3. Your Keywords (for Google) ---
   keywords: [
-    "Sameer Shaikh",
-    "Sameer",
+    "Deeptanshu Sanghani",
+    "Deeptanshu",
     "portfolio",
-    "Dara Science",
-    "Web Development",
-    "Developer",
-    "AI",
-    "ML",
-    "Student",
+    "Full-Stack Developer",
+    "Backend Engineer",
+    "Software Engineer",
   ],
 
   // --- 4. Your Social Links (Very Important!) ---
   social: {
-    twitter: "https://x.com/your-twitter-username", // Your Twitter
-    linkedin: "https://www.linkedin.com/in/sameer-ctrl/", // Your LinkedIn
-    instagram: "https://www.instagram.com/meeracle.music/", // Your Instagram
-    facebook: "https://www.facebook.com/your-facebook-username/", // Your Facebook
-    github: "https://github.com/sameerwork0207", // Your GitHub
+    linkedin: "https://www.linkedin.com/in/deeptanshusanghani/", // Update with actual LinkedIn profile
+    github: "https://github.com/DeeptanshuSanghani1", // Your GitHub
   },
 
   // --- You can leave this part alone ---

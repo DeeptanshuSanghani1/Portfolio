@@ -32,14 +32,14 @@ const HeroSection = () => {
           {!isLoading && (
             <>
               <div className="w-full max-w-[640px] ml-auto">
-                    {/* --- 3. YOUR PHOTO --- */}
-                    <Image
-                      src="/assets/sameer_photo.jpg" // This matches your file in /public
-                      alt="Sameer Shaikh profile photo"
-                      width={150}
-                      height={150}
-                      className="rounded-full mb-4"
-                    />
+                {/* --- 3. YOUR PHOTO --- */}
+                <Image
+                  src="/assets/deeptanshu.jpg"
+                  alt="Deeptanshu Sanghani profile photo"
+                  width={200}
+                  height={200}
+                  className="rounded-full mb-4"
+                />
 
                 {/* --- "Hi, I am" text --- */}
                 <BlurIn delay={0.7}>
@@ -86,18 +86,16 @@ const HeroSection = () => {
                       "cursor-default font-display sm:text-xl md:text-xl bg-clip-text "
                     )}
                   >
-                    <p>Data Science | Web Dev | AI-ML</p>
-                    <p>Presentation | Communication | Public Speaking</p>
+                    <p>Full-Stack Developer | Backend Engineer | Cloud Architecture</p>
+                    <p>Data Engineering | Microservices</p>
                   </div>
                 </BlurIn>
 
               </div>
               <div className="mt-8 flex flex-col gap-3">
                 <Link
-                  href={
-                    "https://drive.google.com/file/d/1lxs_ayS8CUjhjxvo2jFDFsqjeZanbTiA/view?usp=sharing" // <-- PASTE YOUR OWN RESUME LINK HERE
-                  }
-                  target="_blank"
+                  href="/resume/DeeptanshuSanghani - Resume.pdf"
+                  download="Deeptanshu_Sanghani_Resume.pdf"
                   className="flex-1"
                 >
                   <BoxReveal delay={2} width="100%">

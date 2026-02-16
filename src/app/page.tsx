@@ -5,8 +5,8 @@ import SmoothScroll from "@/components/smooth-scroll";
 import { cn } from "@/lib/utils";
 import AnimatedBackground from "@/components/animated-background";
 import SkillsSection from "@/components/sections/skills";
-import ProjectsSection from "@/components/sections/projects";
-import ContactSection from "@/components/sections/contact";
+import ExperienceSection from "@/components/sections/experience";
+import ContactInfoSection from "@/components/sections/contact-info";
 import HeroSection from "@/components/sections/hero";
 
 function MainPage() {
@@ -19,8 +19,8 @@ function MainPage() {
           </div>
           <HeroSection />
           <SkillsSection />
-          <ProjectsSection />
-          <ContactSection />
+          <ExperienceSection />
+          <ContactInfoSection />
         </main>
       </SmoothScroll>
     </>

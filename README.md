@@ -1,77 +1,137 @@
-Live Portfolio https://www.sameershaikh.space/
-<img width="1914" height="1045" alt="image" src="public/assets/seo/og-image.png" /># Hiiiii!!!
-This is Sameer Shaikh's Portfolio website (Took me 3 days to develop and understand btw)
-This was inspired by the work of Naresh Kothari and Avinash Zende
+# 🚀 Deeptanshu Sanghani - Portfolio
 
+> A modern, interactive portfolio showcasing my journey as a Full-Stack Developer and Backend Engineer
 
-Welcome to the repository for my personal portfolio website! This is where I showcase my skills, projects, and a bit of my personality through jaw-dropping 3D animations, slick interactions, and fluid motion. If you're into creative web design, you're in the right place.
+Why 3D animations? I was bored and it looks cooler!
 
-Live Portfolio	https://www.sameershaikh.space/
+[![Next.js](https://img.shields.io/badge/Next.js-14.2.3-black?style=flat-square&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.0-38bdf8?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
 
-## 🔥 Features
+## ✨ About
 
-- **3D Animations**: Custom-made interactive keyboard using Spline with skills as keycaps that reveal titles and descriptions on hover.
-- **Slick Interactions**: Powered by GSAP and Framer Motion for smooth animations on scroll, hover, and element reveal.
-- **Space Theme**: Particles on a dark background to simulate a cosmic environment, making the experience out of this world.
-- **Responsive Design**: Fully responsive across all devices to ensure the best user experience.
-- **Innovative Web Design**: Combining creativity with functionality to push the boundaries of modern web design.
+This portfolio represents my professional journey in software development, featuring my work experience at Ontario Public Services and Intellect Design Arena, along with my technical skills in full-stack development, cloud architecture, and data engineering.
+
+## 🎯 Key Features
+
+- **🎹 Interactive 3D Keyboard**: Custom Spline-powered keyboard showcasing 25+ technical skills with hover interactions
+- **💼 Work Experience Showcase**: Carousel-style presentation of professional experience with detailed responsibilities
+- **🎨 Smooth Animations**: GSAP and Framer Motion powered scroll-triggered animations and transitions
+- **🌌 Space Theme**: Particle effects creating an immersive cosmic environment
+- **📱 Fully Responsive**: Optimized for all devices from mobile to desktop
+- **🌓 Dark/Light Mode**: Seamless theme switching with system preference detection
+- **⚡ Performance Optimized**: Built with Next.js 14 for optimal loading and SEO
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: Next.js, React, Tailwind CSS, Shadcn, Aceternity UI
-- **Animations**: GSAP, Framer Motion, Spline Runtime
-- **Misc**: Resend, Socketio, Zod
+### Frontend
+- **Framework**: Next.js 14 (React 18)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS, Shadcn UI
+- **UI Components**: Aceternity UI, Lucide Icons, React Icons
+
+### Animations & 3D
+- **GSAP**: Scroll-triggered animations and timeline control
+- **Framer Motion**: Component animations and transitions
+- **Spline**: Interactive 3D keyboard model
+
+### Tools & Libraries
+- **Form Handling**: React Hook Form, Zod validation
+- **Theme**: next-themes for dark/light mode
+- **Deployment**: Vercel
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js (v14+)
+- Node.js 18+ 
 - npm or yarn
 
 ### Installation
 
-1. Clone the repository:
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/DeeptanshuSanghani1/portfolio.git
+   cd portfolio
+   ```
 
-    ```bash
-    git clone https://github.com/sameerwork0207/portfolio.git
-    ```
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-2. Navigate to the project directory:
+3. **Run development server**
+   ```bash
+   npm run dev
+   ```
 
-    ```bash
-    cd portfolio
-    ```
+4. **Open your browser**
+   
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
-3. Install dependencies:
+### Build for Production
 
-    ```bash
-    npm install
-    # or
-    yarn install
-    ```
+```bash
+npm run build
+npm start
+```
 
-4. Run the development server:
+## 📁 Project Structure
 
-    ```bash
-    npm run dev
-    # or
-    yarn dev
-    ```
+````
+portfolio/
+├── src/
+│   ├── app/              # Next.js app router pages
+│   ├── components/       # React components
+│   │   ├── sections/    # Page sections (Hero, Skills, Experience, Contact)
+│   │   ├── ui/          # Reusable UI components
+│   │   └── header/      # Navigation components
+│   ├── data/            # Configuration and content data
+│   │   ├── config.ts    # Site configuration
+│   │   ├── constants.ts # Skills definitions
+│   │   └── experience.tsx # Work experience data
+│   └── lib/             # Utility functions
+└── public/
+    ├── assets/          # Images and media
+    └── resume/          # Resume PDF
+```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the magic!
+## 🎨 Customization
 
-## 🚀 Deployment
+### Update Personal Information
 
-This site is deployed on Vercel. For your own deployment, follow these steps:
+Edit `src/data/config.ts`:
+```typescript
+const config = {
+  author: "Your Name",
+  email: "your.email@example.com",
+  // ... other settings
+}
+```
 
-1. Push your code to a GitHub repository.
-2. Connect your repository to Vercel.
-3. Vercel will handle the deployment process.
+### Modify Skills
 
-## 🤝 Contributing
+Update `src/data/constants.ts` to add/remove skills and ensure your Spline keyboard object names match the enum values.
 
-If you'd like to contribute or suggest improvements, feel free to open an issue or submit a pull request. All contributions are welcome!
+### Update Experience
+
+Edit `src/data/experience.tsx` to add your work experience with technologies and responsibilities.
+
+## 🌐 Deployment
+
+### Deploy to Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Import your repository on [Vercel](https://vercel.com)
+3. Vercel will auto-detect Next.js and deploy
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
+
+## 📫 Contact
+
+- **Email**: deeptanshusanghani@gmail.com
+- **LinkedIn**: [linkedin.com/in/deeptanshusanghani](https://www.linkedin.com/in/deeptanshusanghani/)
+- **GitHub**: [github.com/DeeptanshuSanghani1](https://github.com/DeeptanshuSanghani1)
 
 ## 📄 License
 

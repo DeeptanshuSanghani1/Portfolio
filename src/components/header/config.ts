@@ -7,20 +7,13 @@ const links: Link[] = [
     thumbnail: '/assets/nav-link-previews/landing.png'
   },
   {
-    title: 'About',
-  href: 'https://drive.google.com/file/d/1lxs_ayS8CUjhjxvo2jFDFsqjeZanbTiA/view?usp=sharing',
-    thumbnail: '/assets/nav-link-previews/about.png',
-    // open resume in new tab
-    target: '_blank'
-  },
-  {
     title: 'Skills',
     href: '/#skills',
     thumbnail: '/assets/nav-link-previews/skills.png'
   },
   {
-    title: 'Projects',
-    href: '/#projects',
+    title: 'Experience',
+    href: '/#experience',
     thumbnail: '/assets/nav-link-previews/projects.png'
   },
   // {

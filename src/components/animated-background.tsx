@@ -67,7 +67,7 @@ const STATES = {
       },
     },
   },
-  projects: {
+  experience: {
     desktop: {
       scale: { x: 0.225, y: 0.225, z: 0.225 },
       position: { x: 0, y: -40, z: 0 },
@@ -109,7 +109,7 @@ const STATES = {
   },
 };
 
-type Section = "hero" | "about" | "skills" | "projects" | "contact";
+type Section = "hero" | "about" | "skills" | "experience" | "contact";
 
 const AnimatedBackground = () => {
   const { isLoading, bypassLoading } = usePreloader();
@@ -145,7 +145,11 @@ const AnimatedBackground = () => {
     } else {
       if (!selectedSkill || selectedSkill.name !== e.target.name) {
         const skill = SKILLS[e.target.name as SkillNames];
-        setSelectedSkill(skill);
+        if (skill) {
+          setSelectedSkill(skill);
+        } else {
+          console.log("No skill found for object name:", e.target.name);
+        }
       }
     }
   };
@@ -260,7 +264,7 @@ const AnimatedBackground = () => {
         splineApp.setVariable("heading", "");
         splineApp.setVariable("desc", "");
       }
-      if (activeSection === "projects") {
+      if (activeSection === "experience") {
         await sleep(300);
         bongoAnimation?.start();
       } else {
@@ -344,35 +348,44 @@ const AnimatedBackground = () => {
       );
     });
   };
-  // Hardware keyboard mapping: row-based sequential
+  // Hardware keyboard mapping: matches visual keyboard layout
   const getSkillFromKeyPress = (key: string): Skill | null => {
-    const row1 = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-    const row2 = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"];
-    const row3 = ["a", "s", "d", "f", "g", "h", "j", "k", "l"];
-    const row4 = ["z", "x", "c", "v", "b", "n", "m"];
+    // Map keyboard keys to skill names based on visual layout
+    const keyToSkill: Record<string, SkillNames> = {
+      // Top row (left to right based on visual)
+      "q": SkillNames.PYTHON,
+      "w": SkillNames.CSHARP,
+      "e": SkillNames.DOCKER,
+      "r": SkillNames.TS,
+      "t": SkillNames.REACT,
+      "y": SkillNames.GCP,
+      "u": SkillNames.AZURE,
+      
+      // Second row
+      "a": SkillNames.HADOOP,
+      "s": SkillNames.JS,
+      "d": SkillNames.SPRINGBOOT,
+      "f": SkillNames.NODEJS,
+      "g": SkillNames.KUBERNETES,
+      "h": SkillNames.AWS,
+      "j": SkillNames.TERRAFORM,
+      
+      // Third row
+      "z": SkillNames.SCALA,
+      "x": SkillNames.ANGULAR,
+      "c": SkillNames.FASTAPI,
+      "v": SkillNames.POSTGRESQL,
+      "b": SkillNames.MYSQL,
+      
+      // Fourth row
+      "n": SkillNames.JAVA,
+      "m": SkillNames.MONGODB,
+    };
 
-    const skillsArray = Object.values(SKILLS);
     const lowerKey = key.toLowerCase();
-
-    let skillIndex = -1;
-
-    if (row1.includes(lowerKey)) {
-      const keyIndex = row1.indexOf(lowerKey);
-      skillIndex = keyIndex % 6; // Skills 1-6 (repeat)
-    } else if (row2.includes(lowerKey)) {
-      const keyIndex = row2.indexOf(lowerKey);
-      skillIndex = 6 + (keyIndex % 6); // Skills 7-12 (repeat)
-    } else if (row3.includes(lowerKey)) {
-      const keyIndex = row3.indexOf(lowerKey);
-      skillIndex = 12 + (keyIndex % 6); // Skills 13-18 (repeat)
-    } else if (row4.includes(lowerKey)) {
-      const keyIndex = row4.indexOf(lowerKey);
-      skillIndex = 18 + (keyIndex % 6); // Skills 19-24 (repeat inside row)
-    }
-
-    return skillIndex >= 0 && skillIndex < skillsArray.length
-      ? skillsArray[skillIndex]
-      : null;
+    const skillName = keyToSkill[lowerKey];
+    
+    return skillName ? SKILLS[skillName] : null;
   };
 
   const handleSplineInteractions = () => {
@@ -467,23 +480,23 @@ const AnimatedBackground = () => {
     });
     gsap.timeline({
       scrollTrigger: {
-        trigger: "#projects",
+        trigger: "#experience",
         start: "top 70%",
         end: "bottom bottom",
         scrub: true,
         // markers: true,
         onEnter: () => {
-          setActiveSection("projects");
+          setActiveSection("experience");
           gsap.to(kbd.scale, {
-            ...keyboardStates("projects").scale,
+            ...keyboardStates("experience").scale,
             duration: 1,
           });
           gsap.to(kbd.position, {
-            ...keyboardStates("projects").position,
+            ...keyboardStates("experience").position,
             duration: 1,
           });
           gsap.to(kbd.rotation, {
-            ...keyboardStates("projects").rotation,
+            ...keyboardStates("experience").rotation,
             duration: 1,
           });
         },
@@ -528,17 +541,17 @@ const AnimatedBackground = () => {
           });
         },
         onLeaveBack: () => {
-          setActiveSection("projects");
+          setActiveSection("experience");
           gsap.to(kbd.scale, {
-            ...keyboardStates("projects").scale,
+            ...keyboardStates("experience").scale,
             duration: 1,
           });
           gsap.to(kbd.position, {
-            ...keyboardStates("projects").position,
+            ...keyboardStates("experience").position,
             duration: 1,
           });
           gsap.to(kbd.rotation, {
-            ...keyboardStates("projects").rotation,
+            ...keyboardStates("experience").rotation,
             duration: 1,
           });
           // gsap.to(kbd.rotation, { x: 0, duration: 1 });
