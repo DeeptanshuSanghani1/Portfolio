@@ -21,7 +21,7 @@ import Link from "next/link";
 import SlideShow from "@/components/slide-show"; // <-- ADDED THIS
 
 // Import local images from `src/my-projects` so Next.js can resolve them
-import portfolioSameer from "@/my-projects/portfolio-sameer.png";
+import portfolioImg from "@/my-projects/portfolio-sameer.png";
 import bionicArmImg from "@/my-projects/bionic-arm.png";
 import medpredImg from "@/my-projects/medpred.png";
 import visionPaddleImg from "@/my-projects/vision-paddle.png";
@@ -103,9 +103,9 @@ const projects: Project[] = [
     id: "portfolio",
     category: "Web Development",
     title: "My 3D Portfolio",
-  src: portfolioSameer,
+  src: portfolioImg,
     live: "#", 
-    github: "https://github.com/sameerwork0207/portfolio",
+    github: "https://github.com/DeeptanshuSanghani1/Portfolio",
     skills: {
       frontend: [
         PROJECT_SKILLS.react,
@@ -135,9 +135,9 @@ const projects: Project[] = [
     id: "bionic-arm",
     category: "Robotics & Hardware",
     title: "Bionic Arm",
-  src: bionicArmImg,
+    src: bionicArmImg,
     live: "#", 
-    github: "https://github.com/sameerwork0207/Bionic-Arm", // CHANGE THIS LINK
+    github: "https://github.com/DeeptanshuSanghani1",
     skills: {
       frontend: [PROJECT_SKILLS.python], 
     },
@@ -162,9 +162,9 @@ const projects: Project[] = [
     id: "medpred",
     category: "Machine Learning",
     title: "MedPred Disease Prediction",
-  src: medpredImg,
+    src: medpredImg,
     live: "#",
-    github: "https://github.com/sameerwork0207/MedPred", // CHANGE THIS LINK
+    github: "https://github.com/DeeptanshuSanghani1",
     skills: {
       frontend: [
         PROJECT_SKILLS.python,
@@ -212,9 +212,9 @@ const projects: Project[] = [
     id: "vision-paddle",
     category: "Computer Vision",
     title: "Vision Paddle Game",
-  src: visionPaddleImg,
+    src: visionPaddleImg,
     live: "#",
-    github: "https://github.com/sameerwork0207/VisionPaddle", // CHANGE THIS LINK
+    github: "https://github.com/DeeptanshuSanghani1",
     skills: {
       frontend: [PROJECT_SKILLS.python, PROJECT_SKILLS.opencv],
     },
@@ -240,9 +240,9 @@ const projects: Project[] = [
     id: "movie-rec",
     category: "Machine Learning",
     title: "Movie Recommendation System",
-  src: movieRecImg,
+    src: movieRecImg,
     live: "#",
-    github: "https://github.com/sameerwork0207/Movie-Rec-System", // CHANGE THIS LINK
+    github: "https://github.com/DeeptanshuSanghani1",
     skills: {
       frontend: [
         PROJECT_SKILLS.python,
@@ -272,8 +272,8 @@ const projects: Project[] = [
     category: "My GitHub",
     title: "More Projects",
     src: "/logo-dark.svg", 
-    live: "https://github.com/sameerwork0207?tab=repositories", // Direct link to your GitHub repos
-    github: "https://github.com/sameerwork0207",
+    live: "https://github.com/DeeptanshuSanghani1?tab=repositories", 
+    github: "https://github.com/DeeptanshuSanghani1",
     skills: {
       frontend: [PROJECT_SKILLS.github],
     },

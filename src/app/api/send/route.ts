@@ -23,7 +23,7 @@ export async function POST(req: Request) {
     // Initialize Resend only when the route is called
     const resend = new Resend(process.env.RESEND_API_KEY);
     const { data: resendData, error: resendError } = await resend.emails.send({
-      from: "Sameer Shaikh <contact@sameershaikh.space>",
+      from: "Deeptanshu Sanghani <deeptanshusanghani@gmail.com>",
       to: [config.email],
       subject: "Contact me from portfolio",
       react: EmailTemplate({
