@@ -22,10 +22,10 @@ export const metadata: Metadata = {
     url: config.site,
     images: [
       {
-        url: config.ogImg,
-        width: 800,
-        height: 600,
-        alt: "Portfolio preview",
+        url: "https://www.deeptanshusanghani.com/assets/seo/og-preview.png",
+        width: 1200,
+        height: 630,
+        alt: "Deeptanshu Sanghani Portfolio",
       },
     ],
     type: "website",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: config.title,
     description: config.description.short,
-    images: [config.ogImg],
+    images: ["https://www.deeptanshusanghani.com/assets/seo/og-preview.png"],
   },
   robots: {
     index: true,
