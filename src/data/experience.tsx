@@ -9,6 +9,13 @@ import {
   SiSpring,
   SiAngular,
   SiDocker,
+  SiNextdotjs,
+  SiReact,
+  SiTypescript,
+  SiSupabase,
+  SiStripe,
+  SiPostgresql,
+  SiVercel,
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
 
@@ -39,11 +46,42 @@ const EXPERIENCE_SKILLS = {
   springboot: { title: "Spring Boot", icon: <SiSpring /> },
   angular: { title: "Angular", icon: <SiAngular /> },
   docker: { title: "Docker", icon: <SiDocker /> },
+  nextjs: { title: "Next.js", icon: <SiNextdotjs /> },
+  react: { title: "React", icon: <SiReact /> },
+  typescript: { title: "TypeScript", icon: <SiTypescript /> },
+  supabase: { title: "Supabase", icon: <SiSupabase /> },
+  stripe: { title: "Stripe", icon: <SiStripe /> },
+  postgresql: { title: "PostgreSQL", icon: <SiPostgresql /> },
+  vercel: { title: "Vercel", icon: <SiVercel /> },
 };
 
 const experiences: Experience[] = [
   {
     id: "exp-1",
+    company: "KiwotHire",
+    role: "Internship",
+    duration: "Jan 2026 - April 2026",
+    location: "Remote",
+    description: "Built and shipped a production B2B applicant tracking platform for European SMB recruiters, from Stripe billing to CV analysis and auth.",
+    responsibilities: [
+      "Developed a production B2B applicant tracking platform for European SMB recruiters using Next.js and React with a Supabase / PostgreSQL backend, deployed across Vercel and Hetzner",
+      "Designed and shipped end-to-end Stripe billing covering subscription checkout, idempotent webhook handling, multi-seat team plans with seat management, and proration preview flows",
+      "Built a CV analysis pipeline that extracts and structures candidate data from resumes, using SHA-256 hash caching to avoid reprocessing and multi-signal duplicate detection",
+      "Implemented production-grade infrastructure with centralized logging and error tracking (Axiom + Sentry) through security middleware, signed storage URLs, and ClamAV virus scanning on file uploads",
+      "Engineered authentication with Google OAuth (OIDC) using a PKCE flow, stateless-token password reset, and cookie-based session management on Supabase SSR",
+    ],
+    skills: [
+      EXPERIENCE_SKILLS.nextjs,
+      EXPERIENCE_SKILLS.react,
+      EXPERIENCE_SKILLS.typescript,
+      EXPERIENCE_SKILLS.supabase,
+      EXPERIENCE_SKILLS.stripe,
+      EXPERIENCE_SKILLS.postgresql,
+    ],
+    logo: "/assets/company-logo-kiwot.png",
+  },
+  {
+    id: "exp-2",
     company: "Ontario Public Services, Treasury Board",
     role: "Junior Programmer Coop",
     duration: "Sep 2024 - Aug 2025",
@@ -66,7 +104,7 @@ const experiences: Experience[] = [
     logo: "/assets/company-logo-1.png",
   },
   {
-    id: "exp-2",
+    id: "exp-3",
     company: "Intellect Design Arena",
     role: "Software Engineer Intern",
     duration: "May 2024 - Aug 2024",
